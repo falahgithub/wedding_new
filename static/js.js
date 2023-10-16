@@ -1,13 +1,22 @@
 const socket = io();
+const header = {
+    "Authorization": "Basic VGVhbS1HcmVlbi1DYXJkOnRlYU0tZ3JlZU4tY2FyRA=="
+}
 
 socket.on("connect", ()=>{
     console.log("I am connected")
 }) 
 
-
-socket.on("wishes_to_print", (line) => {
-    console.log(line);
-    
+function updation() {
+    let url = 'https://api.sheety.co/c5eec0a10c42539c48b9e5b67ec1c290/weddingSheet1/sheet1';
+fetch(url,{ headers: header})
+.then((response) => response.json())
+.then(json => {
+  // Do something with the data
+//   console.log(json.sheet1S)
+data = json["sheet1"];
+data.forEach(row => {
+    const line =  row["comments"];
     const node = document.createElement("div");
         node.innerText = (line);
         // node.classList.add("wish-one");
@@ -15,8 +24,26 @@ socket.on("wishes_to_print", (line) => {
 
         const ele = document.getElementById("wishes");
         ele.appendChild(node);
+    
+});
+});
+}
+updation();
 
-})  
+
+
+// socket.on("wishes_to_print", (line) => {
+//     console.log(line);
+    
+//     const node = document.createElement("div");
+//         node.innerText = (line);
+//         // node.classList.add("wish-one");
+//         node.classList.add("comment-container");
+
+//         const ele = document.getElementById("wishes");
+//         ele.appendChild(node);
+
+// })  
    
 
 
@@ -34,15 +61,36 @@ document.addEventListener("DOMContentLoaded", () => {
         const wish = val.value +" -- " + name.value;   
 
         console.log(wish);
-        socket.emit("wish", wish);
+        // ///////////////////////////
+        // socket.emit("wish", wish);
 
-        
+        let url = 'https://api.sheety.co/c5eec0a10c42539c48b9e5b67ec1c290/weddingSheet1/sheet1';
+        let body = {
+                sheet1: {
+                 "comments": wish
+                }
+            }
+        fetch(url, {
+                method: 'POST',
+                headers: header,
+                body: JSON.stringify(body)
+            })
+            .then((response) => response.json())
+            .then(json => {
+                // Do something with object
+                console.log("Done");
+            });
+
+
+
+        /////////////////////////////////
         val.value = ""
         name.value = ""
-        function update() {
-            location.reload()
-        };
-        setTimeout(update, 1000);
+        // location.reload()
+        // function update() {
+        //     location.reload()
+        // };
+        // setTimeout(update, 1000);
 
     })
 
@@ -52,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('writeToFile').addEventListener('click', function () {
         // Get the input value
         var inputValue = document.getElementById('numberInput');
-        socket.emit("number", inputValue.value)
+        // socket.emit("number", inputValue.value)
 
         document.getElementById("numbers-group").style.display = "none";
 

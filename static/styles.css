@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Cardo&family=Cormorant+Garamond:wght@300&family=Dancing+Script&family=Freehand&family=Merriweather+Sans:ital,wght@1,300&family=Quicksand:wght@300&family=Raleway&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Cardo&family=Cinzel&family=Cormorant+Garamond:wght@300&family=Dancing+Script&family=Freehand&family=Merriweather+Sans:ital,wght@1,300&family=Quicksand:wght@300&family=Raleway&display=swap');
 
 
 body {
@@ -12,6 +11,9 @@ body {
 .fully-main{
     display: flex;
 
+}
+.main1_mob {
+    display: none;
 }
 
 
@@ -129,9 +131,10 @@ font-family: 'Cormorant Garamond', serif;
     padding: 10px;
     margin: 10px 0;
     /* background-color: #f9f9f9; */
+
     background-color: #e7e6db; 
     border-radius: 5px;
-    /* font-family: Arial, sans-serif; Recommended font family */
+    
     font-size: 18px; /* Slightly smaller font size */
     line-height: 1.6; /* Increased line height for readability */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); /* Light drop shadow */
@@ -149,7 +152,9 @@ font-family: 'Cormorant Garamond', serif;
 }
 
 .card-title {
-    font-family: 'Merriweather Sans', sans-serif;
+    /* font-family: 'Merriweather Sans', sans-serif;
+     */
+     font-family: 'Cinzel', serif;
 }
 
 .thankyou {
@@ -171,7 +176,12 @@ font-family: 'Cormorant Garamond', serif;
     display: none;
     /* transform: rotate(90deg); Rotate the div by 45 degrees */
 }
+.main1_mob {
+    display: inline;
+    height: 70px;
+}
 .main2 {
+    padding-top: 20px;
     text-align: center;
 }
 .names {
