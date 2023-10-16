@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/fav.png" sizes="32x32" type="image/png">
+    <title>Ade-Jon</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="static/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+
+    <script src="static/js.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="fully-main">
+        <div class="main1">
+            <img src="static/start.png" alt="" class="rounded float-start flowers">
+        </div>
+        <div class="main1_mob">
+            <img src="static/start_mob.png" alt="" class="rounded float-start flowers">
+        </div>
+        <div class="main2_new">
+            <img src="static/new_card.jpeg" alt="" class="rounded float-start flowers">
+
+        </div>
+        <div class="main2_new_mob">
+            <img src="static/new_card_mob.png" alt="" class="rounded float-start flowers">
+
+        </div>
+        <div class="main2">
+            <div class="STD">
+                <p>SAVE THE DATE</p>
+            </div>
+            <div class="cordially">
+                <p>You are invited to our wedding</p>
+            </div>
+            <div class="names">
+                <div class="name1">
+                    <p></p>
+                    <div class="fname">ADELINE</div>
+                    <div class="lname">Palmerston</div>
+                </div>
+                <div class="and">
+                    &
+                </div>
+                <div class="name2">
+                    <p></p>
+                    <div class="fname">JONATHAN</div>
+                    <div class="lname">Patterson</div>
+                </div>
+            
+            </div>
+            <div class="date-time">
+                <div class="day">SUNDAY</div>
+                <div class="date">
+                    <div class="month">OCTOBER</div>
+                    <div class="particular-day">26</div>
+                    <div class="year">2025</div>
+                </div>
+                <div class="time">AT 5 PM</div>
+            </div>
+            <div class="address">
+                <div class="add1"> Jashn Resort, Malihabad, Lucknow <a class="icon-link" href="https://www.google.com/maps/place/Jashn+Resort/@26.9023037,81.0468809,17z/data=!3m1!4b1!4m6!3m5!1s0x399958965414df19:0x2f8f93c17ca5f738!8m2!3d26.9023037!4d81.0494558!16s%2Fg%2F11c6v8nhcx?entry=ttu"><img class="icon" src="static/map.png"></a></div>
+                <div class="add2">RSVP  +123-456-7890</div>
+
+                                                        
+            </div>
+
+        </div>
+
+
+    </div>
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <p class="card-title">Wishes From Loved Ones</p>
+                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                    <div class="comment" id="wishes"> 
+                        <div class="comment-container"> Lots of wishes 😊 -- Team Go-Cardless</div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control wish-box" placeholder="Speak your heart out"  aria-describedby="button-addon2" id="input">
+                        <input type="text" class="form-control" placeholder="Your name" id="wisher">
+                        
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Post</button>
+                    </div>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+            </div>
+            <div class="card" style="width: 100%;">
+                <div class="card-body ">
+                    <p class="card-title">Reminder</p>
+                    <div class="input-group mb-3" id="numbers-group" >
+                        <!-- <label for="textInput" class="form-control w-75">Enter your Contact Details and we will remind you on the day of wedding.</label> -->
+                        <input type="text" id="numberInput" class="form-control"  aria-describedby="writeToFile" placeholder="Enter your number"/>
+                        <button type="button" class="btn btn-outline-secondary" id="writeToFile">Remind Me</button>
+                        
+                    </div>
+                    <div id="thanks"></div>
+                </div>
+
+            </div>
+</body>
+</html>
